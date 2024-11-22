@@ -15,6 +15,10 @@ M.base46 = {
 	-- },
 }
 
+M.ui = {
+	statusline = { theme = "minimal" }
+}
+
 
 
 return M
