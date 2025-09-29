@@ -18,6 +18,26 @@ lspconfig.gopls.setup({
     filetypes = { "go", "gomod" }
 })
 
+lspconfig.pylsp.setup({
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+    vim.diagnostic.config({
+        virtual_text = false,
+    }),
+    filetypes = { "python" }
+})
+
+lspconfig.clangd.setup({
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+    vim.diagnostic.config({
+        virtual_text = false,
+    }),
+    filetypes = { "cpp", "hpp", "cc" }
+})
+
 vim.api.nvim_create_autocmd("CursorHold", {
     callback = function()
         vim.diagnostic.open_float(nil, {

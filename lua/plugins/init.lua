@@ -29,6 +29,7 @@ return {
     {
         "Pocco81/auto-save.nvim",
         lazy = false,
+		enabled = false,
         opts = {
             condition = function(buf)
                 local filepath = vim.api.nvim_buf_get_name(buf)
